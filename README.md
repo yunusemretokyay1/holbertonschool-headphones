@@ -5,14 +5,14 @@ a repository that contains the holberton-headphones project.  In this project, I
 Page View from diffrent devices:
 
 <p align="center">
-  <img src="alldevices.jpg"
+  <img src="all-devices.jpg"
        alt="Template">
 </p>
 
 
 ## Author :black_nib:
 
-* **Yunus Emre TOKYAY** <[OnsJannet](https://github.com/yunusemretokyay1)>
+* **Yunus Emre TOKYAY** <[yunusemretokyay1](https://github.com/yunusemretokyay1)>
 
 ## Acknowledgements :pray:
 
