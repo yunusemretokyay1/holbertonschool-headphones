@@ -1,0 +1,478 @@
+:root {
+  --bright-color: white;
+  --red-color: #FF6565;
+  --dark-color: rgb(7, 22, 41);
+  --dark-transparent-color: rgba(7, 22, 41, 17.45%);
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  src: url('fonts/SourceSansPro/SourceSansPro-Regular.otf');
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  src: url('fonts/SourceSansPro/SourceSansPro-Light.otf');
+  font-weight: lighter;
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  src: url('fonts/SourceSansPro/SourceSansPro-Bold.otf');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  src: url('fonts/SourceSansPro/SourceSansPro-Semibold.otf');
+  font-weight: 600;
+}
+
+/* COPIED FROM holberton_school-icon/style.css */
+@font-face {
+  font-family: 'holberton_school-icon';
+  src:  url('fonts/holberton_school-icon.eot?sq4eq4');
+  src:  url('fonts/holberton_school-icon.eot?sq4eq4#iefix') format('embedded-opentype'),
+      url('fonts/holberton_school-icon.ttf?sq4eq4') format('truetype'),
+      url('fonts/holberton_school-icon.woff?sq4eq4') format('woff'),
+      url('fonts/holberton_school-icon.svg?sq4eq4#holberton_school-icon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+/* GENERAL SELECTORS */
+
+* {
+  margin: 0px;
+  padding: 0px;
+
+  font-family: 'Source Sans Pro';
+  text-align: center;
+}
+
+.logo {
+  height: 32px;
+}
+
+h2 {
+  font-size: 32px;
+  line-height: 37.5px;
+  font-weight: 600;
+}
+
+p {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 26px;
+}
+
+.call-to-action-button {
+  background-color: var(--red-color);
+  color: var(--bright-color);
+
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17.6px;
+
+  width: 162px;
+  height: 44px;
+  border: none;
+  border-radius: 22px;
+
+  /* PLEASE ADD SHADOW */
+}
+.call-to-action-button:hover {
+  filter: brightness(87%);
+  cursor: pointer;
+}
+
+/* COPIED & MODIFIED FROM holberton_school-icon/style.css */
+.font-icon {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'holberton_school-icon' !important;
+  speak: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.section-container {
+  max-width: 1000px;
+  margin: auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+}
+
+section ul {
+  justify-content: space-between;
+}
+
+a {
+  color: var(--bright-color);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--red-color);
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+section header {
+  max-width: 637px;
+  margin: 0px auto;
+}
+section header p {
+  margin-top: 40px;
+}
+
+/* main */
+
+body > header {
+  width: 100%;
+  height: auto;
+  position: absolute;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  flex-wrap: wrap;
+}
+@media screen and (max-width: 767px) {
+  body > header {
+      margin-top: 29px;
+  }
+}
+@media screen and (min-width: 768px) {
+  body > header {
+      margin-top: 27.76px;
+  }
+}
+
+#header-nav-toggle {
+  display: none;
+}
+
+body > header nav {
+  width: 255px;
+}
+
+body > header a {
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15.08px;
+}
+
+@media screen and (max-width: 767px) {
+  :root {
+      --hamburger-button-height: 2px;
+      --hamburger-button-big-width: 20px;
+      --hamburger-button-line-translate: 8px;
+  }
+
+  #hamburger-button,
+  #hamburger-button::before,
+  #hamburger-button::after {
+      display: block;
+      background-color: var(--bright-color);
+      height: var(--hamburger-button-height);
+
+      border-radius: calc(var(--hamburger-button-height) / 2);
+
+      transition: all .2s ease-out;
+  }
+  #hamburger-button {
+      width: 13px;
+  }
+  #hamburger-button::before {
+      content: "";
+      position: absolute;
+      transform: translateY(calc(-1 * var(--hamburger-button-line-translate)));
+
+      width: var(--hamburger-button-big-width);
+  }
+  #hamburger-button::after {
+      content: "";
+      position: absolute;
+      transform: translateY(var(--hamburger-button-line-translate));
+
+      width: var(--hamburger-button-big-width);
+  }
+  #header-nav-toggle:checked ~ #hamburger-button {
+      background: transparent;
+  }
+  #header-nav-toggle:checked ~ #hamburger-button::before {
+      content: "";
+      transform: translateY(0px) rotate(-45deg);
+  }
+  #header-nav-toggle:checked ~ #hamburger-button::after {
+      content: "";
+      transform: translateY(0px) rotate(45deg);
+  }
+
+  body > header ul {
+      flex-direction: column;
+  }
+
+  body > header li {
+      margin: 20px 0px;
+  }
+
+  #header-nav-toggle:not(:checked) ~ nav {
+      width: 0px;
+      height: 0px;
+
+      overflow: hidden;
+  }
+  #header-nav-toggle:checked ~ nav {
+      width: 100%;
+      display: block;
+  }
+  #header-nav-toggle:checked ~ nav ul {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #hamburger-button {
+      display: none;
+  }
+
+  body > header ul {
+      flex-direction: row;
+      justify-content: space-around;
+  }
+}
+
+#banner-section {
+  background-image: url('images/headphones_hero_1.jpg');
+  background-position: center;
+  background-size: cover;
+
+  color: var(--bright-color);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#banner-foreground {
+  max-width: 637px;
+  padding: 0px 9px;
+  margin: auto;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 40.22px;
+}
+
+@media screen and (max-width: 767px) {
+  #banner-foreground {
+      margin-top: 327px;
+      margin-bottom: 106px;
+  }
+
+  h1 {
+      margin-bottom: 5px;
+  }
+
+  #banner-section p {
+      padding: 0px 11px;
+  }
+}
+@media screen and (min-width: 768px) {
+  #banner-foreground {
+      margin-top: 372px;
+      margin-bottom: 115px;
+  }
+}
+
+#subtitle {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20.11px;
+}
+
+#banner-foreground > p {
+  margin-top: 65px;
+}
+
+#subtitle-and-button {
+  min-height: 104px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* What we do */
+
+#what-we-do-section {
+  color: var(--dark-color);
+  background-color: var(--bright-color);
+
+  padding: 110px 0px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+#what-we-do-section .section-container {
+  gap: 110px;
+}
+
+#what-we-do-section header {
+  padding: 0px 25px;
+}
+
+@media screen and (min-width: 768px) {
+  #what-we-do-section ul {
+      gap: 58px;
+      flex-direction: row;
+  }
+  #what-we-do-section .row {
+      gap: 58px;
+      flex-direction: row;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 767px) {
+  #what-we-do-section ul {
+      gap: 96px;
+      flex-direction: column;
+  }
+  #what-we-do-section .row {
+      gap: 58px;
+      flex-direction: row;
+  }
+}
+@media screen and (max-width: 480px) {
+  #what-we-do-section ul {
+      gap: 96px;
+      flex-direction: column;
+  }
+  #what-we-do-section .row {
+      gap: 96px;
+      flex-direction: column;
+  }
+}
+
+#what-we-do-section li {
+  max-width: 207px;
+  min-height: 180px;
+}
+
+#what-we-do-section .font-icon {
+  color: var(--red-color);
+  font-size: 100px;
+}
+
+#what-we-do-section h3 {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 26px;
+}
+
+#what-we-do-section ul p {
+  margin-top: 13px;
+}
+
+/* REsults section */
+#results-section {
+  background-image: url('images/headphones_hero_2.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  color: var(--bright-color);
+
+  padding-top: 141px;
+}
+
+#results-section header {
+  padding: 0px 34px;
+}
+
+@media screen and (min-width: 768px) {
+  #results-section ul {
+      margin-top: 56px;
+
+      gap: 76px;
+      flex-direction: row;
+  }
+  #results-section .row {
+      gap: 76px;
+      flex-direction: row;
+  }
+  #results-section {
+      padding-bottom: 79px;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 767px) {
+  #results-section ul {
+      margin-top: 76px;
+
+      gap: 42px;
+      flex-direction: column;
+  }
+  #results-section .row {
+      gap: 76px;
+      flex-direction: row;
+  }
+  #results-section {
+      padding-bottom: 53px;
+  }
+}
+@media screen and (max-width: 480px) {
+  #results-section ul {
+      margin-top: 77px;
+
+      gap: 42px;
+      flex-direction: column;
+  }
+  #results-section .row {
+      gap: 42px;
+      flex-direction: column;
+  }
+  #results-section {
+      padding-top: 125px;
+      padding-bottom: 69px;
+  }
+}
+.result {
+  background-image: url('images/pentagone.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+
+  width: 190px;
+  height: 190px;
+}
+
+.result h3 {
+  font-weight: bold;
+  font-size: 46px;
+  line-height: 26px;
+
+  margin-top: 70px;
+}
+.result p {
+  font-size: 14px;
+  margin-top: 20px;
+}
