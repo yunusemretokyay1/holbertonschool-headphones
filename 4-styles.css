@@ -1,8 +1,7 @@
 :root {
   --bright-color: white;
   --red-color: #FF6565;
-  --dark-color: rgb(7, 22, 41);
-  --dark-transparent-color: rgba(7, 22, 41, 17.45%);
+  --dark-color: #071629;
 }
 
 @font-face {
@@ -138,7 +137,7 @@ section header p {
   margin-top: 40px;
 }
 
-/* main */
+/* main  */
 
 body > header {
   width: 100%;
@@ -323,7 +322,7 @@ h1 {
   justify-content: space-between;
 }
 
-/* What we do */
+/* what we do */
 
 #what-we-do-section {
   color: var(--dark-color);
@@ -393,7 +392,7 @@ h1 {
   margin-top: 13px;
 }
 
-/* REsults section */
+/* results */
 #results-section {
   background-image: url('images/headphones_hero_2.jpg');
   background-repeat: no-repeat;
@@ -477,7 +476,7 @@ h1 {
   margin-top: 20px;
 }
 
-/* EXERCISE 3 */
+/* Contact us */
 
 #contact-us-section {
   background-color: var(--bright-color);
@@ -525,4 +524,62 @@ input {
 
 input::placeholder {
   color: var(--dark-color);
+}
+
+/* Footer */
+.footer {
+  position: absolute;
+  background-color: #071629;
+  width: 100%;
+}
+
+.footer-logo {
+  display: inline-block;
+  padding-right: 20rem;
+  padding-top: 11rem;
+}
+
+.col-1-2 {
+  display: flex;
+  justify-content: space-between;
+  float: right;
+  padding-top: 10rem;
+}
+
+.social {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+
+.holberton_school-icon-ic_facebook,
+.holberton_school-icon-ic_twitter,
+.holberton_school-icon-ic_instagram {
+  color: white;
+  margin: -4rem;
+  font-size: 3rem;
+  text-decoration: none;
+  margin-right: 9rem;
+}
+
+.copy {
+  margin-top: 10rem;
+  text-align: center;
+  color: rgb(94, 94, 94);
+  font-size: 1.4rem;
+  font-family: var(--font-family);
+}
+
+
+@media screen and (max-width: 480px){
+  html {
+    font-size: 57%;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 767px){
+  html {
+    font-size: 60%;
+  }
 }
